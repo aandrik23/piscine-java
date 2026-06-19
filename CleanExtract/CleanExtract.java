@@ -12,6 +12,7 @@ public class CleanExtract {
             } else {
                 extracted = parts[i].substring(firstDot + 1, lastDot).trim();
             }
+            extracted = extracted.replace(".", "").trim();
             if (!extracted.isEmpty()) {
                 result += extracted + " ";
             }
