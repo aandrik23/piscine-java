@@ -7,10 +7,10 @@ public class CleanExtract {
             int lastDot = parts[i].lastIndexOf(".");
 
             String extracted;
-            if firstDot == -1 {
+            if (firstDot == -1) {
                 extracted = parts[i].trim();
             } else if (firstDot == lastDot) {
-                    parts[i].substring(firstDot + 1).trim();
+                   extracted = parts[i].substring(firstDot + 1).trim();
             } else {
                     extracted = parts[i].substring(firstDot + 1, lastDot).trim();
             }
