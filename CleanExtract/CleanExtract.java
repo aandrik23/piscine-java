@@ -7,7 +7,7 @@ public class CleanExtract {
             int lastDot = parts[i].lastIndexOf(".");
 
             String extracted;
-            if (firstDot == -1 || lastDot == -1) {
+            if (firstDot == -1 || lastDot <= firstDot) {
                 extracted = parts[i].trim();
             } else {
                 extracted = parts[i].substring(firstDot + 1, lastDot).trim();
