@@ -25,7 +25,7 @@ public class Capitalize {
             if (word.isEmpty()) {
                 continue;
             }
-            String capitalized = word.substring(0, 1).toUpperCase() + word.substring(1);
+            String capitalized = word.substring(0, 1).toUpperCase() + word.substring(1).to.LowerCase();
             if (!result.isEmpty()) {
                 result += " ";
             }
