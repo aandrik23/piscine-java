@@ -22,6 +22,9 @@ public class Capitalize {
         String result = "";
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
+            if (word.isEmpty()) {
+                continue;
+            }
             String capitalized = word.substring(0, 1).toUpperCase() + word.substring(1);
             if (i > 0) {
                 result += " ";
