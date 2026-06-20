@@ -1,5 +1,9 @@
 public class DoOp {
     public static String operate(String[] args) {
+        if (args == null || args.length < 3) {
+            return "Error";
+        }
+
         int left = Integer.parseInt(args[0]);
         String op = args[1];
         int right = Integer.parseInt(args[2]);
