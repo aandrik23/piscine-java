@@ -1,4 +1,4 @@
-
+import java.util.Objects;
 public class CelestialObject {
     public static final double KM_IN_ONE_AU = 150000000;
     private double x;
@@ -69,6 +69,30 @@ public class CelestialObject {
     @Override
     public String toString() {
         return String.format("%s is positioned at (%.3f, %.3f, %.3f)", name, x, y, z);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+
+        if (object == null) {
+            return false;
+        }
+
+        if (!(object instanceof CelestialObject)) {
+            return false;
+        }
+
+        CelestialObject other = (CelestialObject) object;
+
+        return x == other.x && y == other.y && z == other.z && name.equals(other.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, x, y, z);
     }
 }
 
