@@ -15,25 +15,23 @@ public class Character {
         allCharacters.add(this);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getMaxHealth() {
-        return maxHealth;
-    }
-
-    public int getCurrentHealth() {
-        return currentHealth;
-    }
-
     @Override
-    public String toString() {
-        if (currentHealth == 0) {
-            return String.format("%s : KO", name);
+    public String toString(){
+        if (this.currentHealth == 0) {
+            return String.format("%s : KO",this.name);
         }
+        return String.format("%s : %d/%d",this.name,this.currentHealth,this.maxHealth);
+    }
 
-        return String.format("%s : %d/%d", name, currentHealth, maxHealth);
+    public int getMaxHealth(){
+        return this.maxHealth;
+    }
+
+    public int getCurrentHealth(){
+        return this.currentHealth;
+    }
+    public String getName(){
+        return this.name;
     }
 
     public void takeDamage(int damage) {
@@ -46,6 +44,10 @@ public class Character {
 
     public void attack(Character character) {
         character.takeDamage(9);
+    }
+
+    public static void reset(){
+        allCharacters.clear();
     }
 
     public static String printStatus() {
@@ -62,7 +64,7 @@ public class Character {
             result += " - " + character.toString() + "\n";
         }
 
-        result += "------------------------------------------";
+        result += "------------------------------------------\n";
         return result;
     }
 
