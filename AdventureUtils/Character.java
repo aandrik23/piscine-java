@@ -38,7 +38,7 @@ public class Character {
 
     public void takeDamage(int damage) {
         currentHealth -= damage;
-        
+
         if (currentHealth < 0) {
             currentHealth = 0;
         }
@@ -52,7 +52,7 @@ public class Character {
         if (allCharacters.isEmpty()) {
             return "------------------------------------------\n"
                     + "Nobody's fighting right now !\n"
-                    + "------------------------------------------";
+                    + "------------------------------------------\n";
         }
 
         String result = "------------------------------------------\n"
@@ -62,7 +62,7 @@ public class Character {
             result += " - " + character.toString() + "\n";
         }
 
-        result += "------------------------------------------";
+        result += "------------------------------------------\n";
         return result;
     }
 
