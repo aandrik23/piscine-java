@@ -49,17 +49,19 @@ public class Character {
     }
 
     public static String printStatus() {
-        String result = "------------------------------------------\n";
         if (allCharacters.isEmpty()) {
-            result += "Nobody's fighting right now !\n";
-            result += "------------------------------------------\n";
-            return result;
+            return "------------------------------------------\n"
+                    + "Nobody's fighting right now !\n"
+                    + "------------------------------------------\n";
         }
-        result += "Characters currently fighting : \n";
+
+        String result = "------------------------------------------\n"
+                + "Characters currently fighting : \n";
 
         for (Character character : allCharacters) {
             result += " - " + character.toString() + "\n";
         }
+
         result += "------------------------------------------\n";
         return result;
     }
