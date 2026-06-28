@@ -52,20 +52,15 @@ public class Character {
 
     public static String printStatus() {
         if (allCharacters.isEmpty()) {
-            return "------------------------------------------\n"
-                    + "Nobody's fighting right now !\n"
-                    + "------------------------------------------\n";
+            return "------------------------------------------\nNobody's fighting right now !\n------------------------------------------\n";
         }
 
-        String result = "------------------------------------------\n"
-                + "Characters currently fighting : \n";
-
+        StringBuilder status = new StringBuilder("------------------------------------------\nCharacters currently fighting :\n");
         for (Character character : allCharacters) {
-            result += " - " + character.toString() + "\n";
+            status.append(" - ").append(character.toString()).append("\n");
         }
-
-        result += "------------------------------------------\n";
-        return result;
+        status.append("------------------------------------------\n");
+        return status.toString();
     }
 
     public static Character fight(Character first, Character second) {
