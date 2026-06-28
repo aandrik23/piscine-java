@@ -52,7 +52,7 @@ public class Character {
         String result = "------------------------------------------\n";
         if (allCharacters.isEmpty()) {
             result += "Nobody's fighting right now !\n";
-            result += "------------------------------------------";
+            result += "------------------------------------------\n";
             return result;
         }
         result += "Characters currently fighting : \n";
@@ -60,7 +60,7 @@ public class Character {
         for (Character character : allCharacters) {
             result += " - " + character.toString() + "\n";
         }
-        result += "------------------------------------------";
+        result += "------------------------------------------\n";
         return result;
     }
 
