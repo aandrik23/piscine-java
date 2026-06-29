@@ -5,7 +5,7 @@ public class Character {
     private static List<Character> allCharacters = new ArrayList<>();
     private final String name;
     private final int maxHealth;
-    protected int currentHealth;
+    private int currentHealth;
 
     public Character(String name, int maxHealth) {
         this.name = name;
