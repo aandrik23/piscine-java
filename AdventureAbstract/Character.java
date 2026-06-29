@@ -34,17 +34,9 @@ public abstract class Character {
         return this.name;
     }
 
-    public abstract void takeDamage(int damage) {
-        currentHealth -= damage;
+    public abstract void takeDamage(int damage);
 
-        if (currentHealth < 0) {
-            currentHealth = 0;
-        }
-    }
-
-    public abstract void attack(Character character) {
-        character.takeDamage(9);
-    }
+    public abstract void attack(Character character);
 
     public static void reset(){
         allCharacters.clear();
