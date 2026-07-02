@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListSearchIndex {
     public static Integer findFirstIndex(List<Integer> list, Integer value) {
         int index = List.indexOf(value);
