@@ -25,8 +25,14 @@ public class ParseDate {
         int minutes = Integer.parseInt(parts[5]);
         int seconds = Integer.parseInt(parts[8]);
 
-        if (stringDate.contains("du soir")) {
-            hour += 12;
+        if (stringDate.contains("du soir") || stringDate.contains("in the evening")) {
+            if (hour != 12) {
+                hour += 12;
+            }
+        }
+
+        if ((stringDate.contains("du matin") || stringDate.contains("in the morning")) && hour == 12) {
+            hour = 0;
         }
 
         return LocalTime.of(hour, minutes, seconds);
