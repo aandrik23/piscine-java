@@ -28,7 +28,11 @@ public class RegexReplace {
         } else if (username.contains("_")) {
             username = username.replaceFirst("_.*", "_***");
         } else if (username.length() > 3) {
-            username = username.substring(0, 3) + "***";
+            StringBuilder hidden = new StringBuilder(username.substring(0, 3));
+            for (int i = 3; i < username.length(); i++) {
+                hidden.append("*");
+            }
+            username = hidden.toString();
         }
 
         String[] parts = domain.split("\\.");
