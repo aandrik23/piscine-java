@@ -22,11 +22,14 @@ public class RegexReplace {
         String domain = email[1];
 
         if (username.contains(".")) {
-            username = username.replaceFirst("\\..*", ".***");
+            int index = username.indexOf('.');
+            username = username.substring(0, index + 1) + "*".repeat(username.length() - index - 1);
         } else if (username.contains("-")) {
-            username = username.replaceFirst("-.*", "-***");
+            int index = username.indexOf('-');
+            username = username.substring(0, index + 1) + "*".repeat(username.length() - index - 1);
         } else if (username.contains("_")) {
-            username = username.replaceFirst("_.*", "_***");
+            int index = username.indexOf('_');
+            username = username.substring(0, index + 1) + "*".repeat(username.length() - index - 1);
         } else if (username.length() > 3) {
             StringBuilder hidden = new StringBuilder(username.substring(0, 3));
             for (int i = 3; i < username.length(); i++) {
