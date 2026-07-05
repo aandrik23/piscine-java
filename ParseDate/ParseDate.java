@@ -15,6 +15,11 @@ public class ParseDate {
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
+
+        if (stringDate == null) {
+            return null;
+        }
+
         String[] parts = stringDate.split(" ");
         int hour = Integer.parseInt(parts[0]);
         int minutes = Integer.parseInt(parts[5]);
