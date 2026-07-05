@@ -10,7 +10,12 @@ public class ParseDate {
     }
 
     public static LocalDate parseFullTextFormat(String stringDate) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE d MMMM yyyy", Locale.FRENCH);
+
+        if (stringDate == null) {
+            return null;
+        }
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("EEEE d MMMM yyyy", Locale.FRENCH);
         return LocalDate.parse(stringDate, formatter);
     }
 
