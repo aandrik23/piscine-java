@@ -18,6 +18,6 @@ public class RegexMatch {
         if (s == null) {
             return false;
         }
-        return s.matches(".*A{3,}.*);
+        return s.matches(".*A{3,}.*");
     }
 }
