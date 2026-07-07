@@ -11,7 +11,7 @@ public class Excalibur {
 
     public static Excalibur getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new Excalibur("Swoed");
+            INSTANCE = new Excalibur("Sword");
         }
         return INSTANCE;
     }
